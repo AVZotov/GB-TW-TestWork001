@@ -30,5 +30,22 @@ void PrintArray(string[] array)
     }
 }
 
+string[] GetResultArray(string[] array)
+{
+    string separator = "separator";
+    string result = String.Empty;
+
+    foreach (var str in array)
+    {
+        if (str.Length <= 3)
+        {
+            result = result + str + separator;
+        }
+    }
+
+    return result.Split(separator);
+}
+
 string[] userArray = GetArray();
-PrintArray(userArray);
+string[] resultArray = GetResultArray(userArray);
+PrintArray(resultArray);
